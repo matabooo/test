@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script><script src="classic.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ハエたたきゲーム</title>
+</head>
+<style>
+     @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+body {
+  background-image: url("img/ha.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-color: #c0c0c0;
+  background-position: center;
+  user-select: none;
+}
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: rgb(95, 102, 100);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover {
+  background-image: url("img/ha.png");
+  background-color: #363333;
+  box-shadow: 0px 15px 20px rgba(24, 29, 27, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.class7{
+  width: 100%;
+}
+table{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+    </style>
+<body bgcolor="#fffacd">
+    <br>
+    <img src="img/flyswatter.png"draggable="false" class="class7">
+    <h1 style="text-align:center"draggable="false">あなたの得点は<br><span id="countfly">0</span>点です。<br><span id="renk"></span>ランクです<br>
+    <span id="l"></span>です。<br>(制限時間<span id="tim"></span>秒)</h1>
+    <br>
+    <table style="margin: 0 auto">
+        <tr>
+            <td>
+                <div class="wrap"><button class="button" onclick="OnButtonClick1();">もう一度</button></div>
+            </td>
+            <td>
+                <div class="wrap"><button class="button" onclick="OnButtonClick2();">タイトル</button></div>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <table align="center"class="table_design02" border="1" style="border-collapse: collapse; border-color: black">
+        <tr>
+            <td align="center">ランク</td>
+            <td align="center">レベル</td>
+        </tr>
+        <tr>
+            <td align="center">A</td>
+            <td>音速振りのおばちゃん</td>
+        </tr>
+        <tr>
+            <td align="center">B</td>
+            <td>ハエたたきプロ</td>
+        </tr>
+        <tr>
+            <td align="center">C</td>
+            <td>一般人</td>
+        </tr>
+        <tr>
+            <td align="center">D</td>
+            <td>ハエたたき才能なし</td>
+        </tr>
+    </table>
+    <script>
+        function OnButtonClick1() {
+            window.location = "game.html"
+        }   
+        function OnButtonClick2() {
+            window.location = "tittle.html"
+        }
+        var rank = "";
+        var s=0;
+        var level = "";
+        console.log(sessionStorage.getItem('score'));
+        document.getElementById("countfly").innerHTML = sessionStorage.getItem('score');
+        console.log(sessionStorage.getItem('time'));
+        tim = sessionStorage.getItem('time');
+        document.getElementById("tim").innerHTML = tim;
+        s = countfly.textContent;
+        if(tim == 10){
+            if(s >= 25){
+                rank = "A";
+                level = "音速振りのおばちゃん";
+            }else if(s >= 15){
+                rank = "B";
+                level = "ハエたたきプロ";
+            }else if(s >= 10){
+                rank = "C";
+                level = "一般人";
+            }else{
+                rank = "D";
+                level = "ハエたたき論外";
+            }
+        }else if(tim == 20){
+            if(s >= 50){
+                rank = "A";
+                level = "音速振りのおばちゃん";
+            }else if(s >= 40){
+                rank = "B";
+                level = "ハエたたきプロ";
+            }else if(s >= 20){
+                rank = "C";
+                level = "一般人";
+            }else{
+                rank = "D";
+                level = "ハエたたき論外";
+            }
+        }else{
+            if(s >= 80){
+                rank = "A";
+                level = "音速振りのおばちゃん";
+            }else if(s >= 60){
+                rank = "B";
+                level = "ハエたたきプロ";
+            }else if(s >= 40){
+                rank = "C";
+                level = "一般人";
+            }else{
+                rank = "D";
+                level = "ハエたたき才能なし";
+            }
+        }
+
+        document.getElementById("renk").textContent = rank;
+        document.getElementById("l").textContent = level;
+    </script>
+</body>
+</html>

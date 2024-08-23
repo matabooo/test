@@ -1,0 +1,54 @@
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ハエたたきゲーム</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+.class3{
+    font-size: 40px;    
+    color: #ff0000;
+}
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-image: url("img/gomi.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-color: #c0c0c0;
+    background-position: center;
+    user-select: none;
+}
+.class8{
+    width: 100%;
+}
+</style>
+<body>
+  <img src="img/flyswatter.png"draggable="false"class="class8">
+  <table>
+    <tbody>
+      <tr>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly1"draggable="false"></td>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly2"draggable="false"></td>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly3"draggable="false"></td>
+      </tr>
+      <tr>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly4"draggable="false"></td>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly5"draggable="false"></td>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly6"draggable="false"></td>
+      </tr>
+      <tr>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly7"draggable="false"></td>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly8"draggable="false"></td>
+        <td><img src="img/to.png" width="120" height="120" id="image_fly9"draggable="false"></td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+  <h2 style="text-align:center"><span id="countfly">0</span>点</h2>
+  <p align="center"><span id="msg" class="class3"></span>秒</p>
+  <script src="sample.js"></script>
+</body>
+</html>

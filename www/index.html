@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script><script src="classic.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <title>ハエたたきゲーム</title>
+</head>
+<style>
+     @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background-image: url("img/ha.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-color: #c0c0c0;
+  background-position: center;
+  user-select: none;
+}
+.container{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+.image{
+	width: 100%;
+	animation: fadeout-anim 5s linear forwards;
+    margin: auto;
+    display: block;
+}
+body{
+    background-color: #c0c0c0;
+}
+.b {
+  width: 100px;
+  height: 32px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 8px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: rgb(78, 78, 78);
+  border: none;
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.b:hover {
+  background-color: #363333;
+  color: #fff;
+  transform: translateY(-1px);
+}
+@keyframes fadeout-anim {
+	100% {
+		opacity: 0;
+	}
+}
+</style>
+<script>
+    window.onload = function() {
+    
+    var max = 0;
+    var count = 3;
+    var timerID = setInterval( function(){
+
+    if(count < max){
+        clearInterval(timerID);
+        window.location = "tittle.html";
+    }else{
+        count--;
+        console.log(count);
+        
+    }
+
+    }, 1000);
+
+}
+function OnButtonClick() {
+            window.location = "tittle.html"
+        }
+
+</script>
+<body>
+    <div class="container">
+	<img class="image" src="img/flyswatter.png" />
+    </div>
+<div align="right"><button class="b" onclick="OnButtonClick();">skip></button></div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script><script src="classic.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ハエたたきゲーム</title>
+</head>
+<script>
+    function OnButtonClick() {
+            window.location = "game.html"
+        }
+    function OnButtonClick1() {
+        window.location = "kind.html"
+    }
+    function OnButtonClick2() {
+        window.location = "score.html"
+    }
+</script>
+<style>
+        @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background-image: url("img/ha.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-color: #c0c0c0;
+  background-position: center;
+  user-select: none;
+}
+</style>
+<body class="class1">
+    <br><br><br><Br>
+    <img src="img/flyswatter.png"width="100%" height="20%"draggable="false">
+    <Br><br><br><br><br>
+    <div class="wrap"><button class="button" onclick="OnButtonClick();">start</button></div>
+    <br><br><br>
+    <nobr class="color class4">制限時間を選択してください</nobr>
+    <select id="menu">
+        <option value="10">10秒</option>
+        <option value="20"selected>20秒</option>
+        <option value="30">30秒</option>
+    </select>
+    <br>
+    <table align="center"class="table_design02" border="1" style="border-collapse: collapse; border-color: black">
+        <tr>
+            <td class="class5">ランク</td>
+            <td class="class5">レベル</td>
+        </tr>
+        <tr>
+            <td align="center">A</td>
+            <td class="class4">音速振りのおばちゃん</td>
+        </tr>
+        <tr>
+            <td align="center">B</td>
+            <td class="class4">ハエたたきプロ</td>
+        </tr>
+        <tr>
+            <td align="center">C</td>
+            <td class="class4">一般人</td>
+        </tr>
+        <tr>
+            <td align="center">D</td>
+            <td class="class4">ハエたたき才能なし</td>
+        </tr>
+    </table>
+    <br>
+    <table align="center">
+        <tr>
+            <td><div class="wrap"><button class="button" onclick="OnButtonClick1();">種類</button></div></td>
+            <td><div class="wrap"><button class="button" onclick="OnButtonClick2();">点数とランク</button></div></td>
+        </tr>
+    </table>
+    <br>
+    <script>
+        // プルダウン要素を取得
+        let t = document.getElementById('menu');
+        console.log('選択されているのは ' + t.value + ' です');
+        sessionStorage.setItem('zi', t.value);
+        const menu = document.getElementById('menu');
+        
+        // 選択イベントのリスナーを設定
+        menu.addEventListener('change', (event) => {
+            // 選択された項目を取得
+            const t = Number(event.target.value);
+            sessionStorage.setItem('zi', t);
+            console.log(`選択されているのは ${t} です`);
+        });
+    </script>
+</body>
+</html>
